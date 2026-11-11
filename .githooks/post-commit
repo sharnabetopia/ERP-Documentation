@@ -1,7 +1,7 @@
 #!/bin/sh
 AUTHOR_NAME=$(git log -1 --format='%an')
 case "$AUTHOR_NAME" in
-  *[Cc]ursor[Aa]gent*|*[Cc]ursor[- ][Aa]gent*|*[Cc]laude*|*[Cc]opilot*|*[Gg]ithub[- ][Cc]opilot*|*[Oo]pen[Aa][Ii]*)
+  *[Cc]ursor[Aa]gent*|*[Cc]ursor?[Aa]gent*|*[Cc]laude*|*[Cc]opilot*|*[Gg]ithub?[Cc]opilot*|*[Oo]pen[Aa][Ii]*)
     REAL_NAME=$(git config user.name); REAL_EMAIL=$(git config user.email)
     if [ -n "$REAL_NAME" ] && [ -n "$REAL_EMAIL" ]; then
       git commit --amend --no-edit --author="$REAL_NAME <$REAL_EMAIL>" --allow-empty >/dev/null 2>&1
